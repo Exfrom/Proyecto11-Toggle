@@ -1,9 +1,12 @@
-*{
+/* Estilos generales para resetear márgenes y padding en todos los elementos */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+/* Estilos para el cuerpo del documento */
+body {
     background-color: rgb(35, 34, 34);
     display: flex;
     justify-content: center;
@@ -11,4 +14,59 @@ body{
     flex-direction: column;
     min-height: 100vh;
     transition: 0.5s;
+
+    /* Estilos adicionales cuando la clase toggleBlanco está presente en el cuerpo */
+    &.toggleBlanco {
+        background-color: aliceblue;
+    }
+}
+
+/* Estilos para el elemento con el id "toggle" */
+#toggle {
+    height: 160px;
+    width: 320px;
+    background: #1b1b1b;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+                inset 0 8px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    appearance: none;
+    border-radius: 160px;
+
+    /* Estilos adicionales cuando la clase toggleBlanco está presente en el toggle */
+    &.toggleBlanco {
+        background-color: aliceblue;
+        box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1),
+                    inset 0 2px 8px rgba(0, 0, 0, 0.1),
+                    inset 0 -4px 4px rgba(0, 0, 0, 0.05);
+
+        /* Estilos para el elemento con la clase "circulo" dentro del toggle con la clase toggleBlanco */
+        .circulo {
+            left: 160px;
+            box-shadow: inset 8px 20px rgba(0, 0, 0, 0.1),
+                        inset 4px 4px rgba(255, 255, 255, 1),
+                        inset -4px 4px rgba(255, 255, 255, 1);
+            background-color: linear-gradient(to bottom, aliceblue, #fafafa);
+        }
+    }
+}
+
+/* Estilos para el elemento con la clase "circulo" */
+.circulo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 160px;
+    content: "";
+    background: linear-gradient(to bottom, #444, #222);
+    border-radius: 50%;
+    transform: scale(0.9);
+    transition: 0.5s;
+    box-shadow: 0 8px 40px rgba(82, 81, 81, 0.5),
+                inset 4px 4px rgba(255, 255, 255, 0.2),
+                inset -4px 4px rgba(255, 255, 255, 0.2);
 }
